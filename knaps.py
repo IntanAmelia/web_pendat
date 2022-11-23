@@ -82,13 +82,13 @@ with tab3:
     # separate target 
 
     # values
-    matrices_X = data.iloc[:,0:29].values
+    matrices_X = data.iloc[:,0:28].values
 
     # classes
-    matrices_Y = data.iloc[:,30].values
+    matrices_Y = data.iloc[:,29].values
 
-    X_1 = data.iloc[:,0:29].values
-    Y_1 = data.iloc[:, 30].values
+    X_1 = data.iloc[:,0:28].values
+    Y_1 = data.iloc[:, 29].values
 
     # X_train, X_test, y_train, y_test = train_test_split(matrices_X, matrices_Y, test_size = percent_amount_of_test_data, random_state=0)
     X_train, X_test, y_train, y_test = train_test_split(X_1, Y_1, test_size = percent_amount_of_test_data, random_state=0)
