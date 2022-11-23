@@ -71,6 +71,7 @@ with tab3:
     st.write(y_test.shape)
 
 with tab4:
+    st.write("## Naive Bayes")
     # Feature Scaling to bring the variable in a single scale
     from sklearn.preprocessing import StandardScaler
     sc = StandardScaler()
@@ -103,3 +104,12 @@ with tab4:
     akurasi_test = round(100 * nvklasifikasi.score(X_test, y_test) )
     st.write('Training set score: {:.2f}'.format(akurasi_training))
     st.write('Test set score: {:.2f}'.format(akurasi_test))
+    
+    st.write("KNN")
+    K=10
+    knn=KNeighborsClassifier(n_neighbors=K)
+    knn.fit(X_train,y_train)
+    y_pred=knn.predict(X_test)
+    
+    skor_akurasi = round(100 * accuracy_score(y_test,y_pred))
+    st.write("Model accuracy score : {0:0.2f}" . format(skor_akurasi))
