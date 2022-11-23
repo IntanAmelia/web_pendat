@@ -60,13 +60,43 @@ with tab3:
     st.write("Menampilkan data yang sudah dinormalisasi dan dilakukan scaled features")
     st.dataframe(data)
     
-    percent_test_data = 0.3
-    X = data.iloc[:,1:29].values
-    Y = data.iloc[:,30].values
-    st.write("X")
-    st.write("Y")
-    X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size = percent_test_data, random_state=0)
-    st.write("X.shape")
-    st.write("X_train.shape")
+    percent_amount_of_test_data = 0.3
+
+    st.write("## Hitung Data")
+    st.write("- Ambil kolom 'Binary Class' sebagai target kolom untuk kategori kelas")
+    st.write("- Pisahkan data latih dengan data tes")
+    st.write("""            Spliting Data
+
+                data latih (nilai data)
+                X_train 
+
+                data tes (nilai data)
+                X_test 
+
+                data latih (kelas data)
+                y_train
+
+                data tes (kelas data)
+                y_test""")
+
+    # separate target 
+
+    # values
+    matrices_X = data.iloc[:,0:29].values
+
+    # classes
+    matrices_Y = data.iloc[:,30].values
+
+    X_1 = data.iloc[:,0:29].values
+    Y_1 = data.iloc[:, 30].values
+
+    # X_train, X_test, y_train, y_test = train_test_split(matrices_X, matrices_Y, test_size = percent_amount_of_test_data, random_state=0)
+    X_train, X_test, y_train, y_test = train_test_split(X_1, Y_1, test_size = percent_amount_of_test_data, random_state=0)
+
+    st.write("Menampilkan Y_1")
+    st.write(Y_1)
+    
+    st.write("Menampilkan X_1")
+    st.write(X_1)
     
     
