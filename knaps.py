@@ -44,3 +44,4 @@ with tab3:
     data.info()
     
     data.head()
+    st.dataframe(data)
