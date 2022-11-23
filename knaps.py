@@ -126,4 +126,16 @@ with tab4:
     st.write('Model Accuracy Score: {0:0.2f}'.format(akurasi))
     
 with tab5:
-    input("Masukkan Umur ANda : ")
+    st.number_input('Masukkan Umur Anda : ', 0,1000)
+    st.radio('Pilih Gender',['Male','Female'])
+    st.radio('On thyroxine',['f','t'])
+    st.radio('Query on thyroxine',['f','t'])
+    st.radio('On antithyroid medication',['f','t'])
+    st.radio('Sick',['f','t'])
+    st.radio('Pregnant',['f','t'])
+    st.radio('Thyroid surgery',['f','t'])
+    st.radio('I131 treatment',['f','t'])
+    st.radio('Query hypothyroid',['f','t'])
+    st.radio('Query hyperthyroid',['f','t'])
+    st.radio('Lithium',['f','t'])
+    
