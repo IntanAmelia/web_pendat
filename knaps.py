@@ -29,8 +29,8 @@ with tab1:
     st.write("Approximately the following for each database : 2800 training (data) instances and 972 test instances, Plenty of missing data, 29 or so attributes, either Boolean or continuously-valued")
 
 with tab2:
-    st.write("Import Data")
-    data = pd.read_csv("https://raw.githubusercontent.com/Feb11F/dataset/main/credit_score.csv")
+    st.write("Load Data")
+    data = pd.read_csv("https://raw.githubusercontent.com/IntanAmelia/web_pendat/main/hypothyroid.csv")
     st.dataframe(data)
 
 with tab3:
