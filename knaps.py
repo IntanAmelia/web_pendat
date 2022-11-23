@@ -35,6 +35,7 @@ with tab2:
     st.dataframe(data)
 
 with tab3:
+    st.write("Normalisasi Data")
     data.head()
     
     from sklearn.preprocessing import LabelEncoder
@@ -45,10 +46,16 @@ with tab3:
     
     data.head()
     st.dataframe(data)
-
+    
+    st.write("Scaled Features")
     data['age']=(data['age']-data['age'].min())/(data['age'].max()-data['age'].min())
     data['TT4']=(data['TT4']-data['TT4'].min())/(data['TT4'].max()-data['TT4'].min())
     data['T4U']=(data['T4U']-data['T4U'].min())/(data['T4U'].max()-data['T4U'].min())
     data['FTI']=(data['FTI']-data['FTI'].min())/(data['FTI'].max()-data['FTI'].min())
     
     st.dataframe(data)
+    
+    X = X.drop(columns = "binaryClass")
+
+    st.write("Menampilkan data yang sudah dinormalisasi dan dilakukan scaled features")
+    st.dataframe(X)
