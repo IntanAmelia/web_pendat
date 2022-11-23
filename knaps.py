@@ -59,44 +59,13 @@ with tab3:
 
     st.write("Menampilkan data yang sudah dinormalisasi dan dilakukan scaled features")
     st.dataframe(data)
-    
-    percent_amount_of_test_data = 0.3
-
-    st.write("## Hitung Data")
-    st.write("- Ambil kolom 'Binary Class' sebagai target kolom untuk kategori kelas")
-    st.write("- Pisahkan data latih dengan data tes")
-    st.write("""            Spliting Data
-
-                data latih (nilai data)
-                X_train 
-
-                data tes (nilai data)
-                X_test 
-
-                data latih (kelas data)
-                y_train
-
-                data tes (kelas data)
-                y_test""")
-
-    # separate target 
-
-    # values
-    matrices_X = data.iloc[:,0:28].values
-
-    # classes
-    matrices_Y = data.iloc[:,29].values
-
-    X_1 = data.iloc[:,0:28].values
-    Y_1 = data.iloc[:, 29].values
-
-    # X_train, X_test, y_train, y_test = train_test_split(matrices_X, matrices_Y, test_size = percent_amount_of_test_data, random_state=0)
-    X_train, X_test, y_train, y_test = train_test_split(X_1, Y_1, test_size = percent_amount_of_test_data, random_state=0)
-
-    st.write("Menampilkan Y_1")
-    st.write(Y_1)
-    
-    st.write("Menampilkan X_1")
-    st.write(X_1)
-    
-    
+       
+    y=data['binaryClass']
+    x=data.drop(['binaryClass'],axis=1)
+    from sklearn.model_selection import train_test_split
+    xtrain,xtest,ytrain,ytest= train_test_split(x,y,test_size=0.3,stratify=y)
+    st.write("xtrain.shape")
+    st.write("xtest.shape")
+    st.write("ytrain.shape")
+    st.write("ytest.shape")
+print(ytest.shape)
