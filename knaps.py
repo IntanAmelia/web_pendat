@@ -78,7 +78,7 @@ with tab4:
     X_train = sc.fit_transform(X_train)
     X_test = sc.transform(X_test)
     
-    st.write(GaussianNB(priors=None))
+    GaussianNB(priors=None)
     
     # Fitting Naive Bayes Classification to the Training set with linear kernel
     nvklasifikasi = GaussianNB()
@@ -86,16 +86,16 @@ with tab4:
     
     # Predicting the Test set results
     y_pred = nvklasifikasi.predict(X_test)
-    st.write(y_pred)
+    y_pred
     
     #lets see the actual and predicted value side by side
     y_compare = np.vstack((y_test,y_pred)).T
     #actual value on the left side and predicted value on the right hand side
     #printing the top 5 values
-    st.write(y_compare[:5,:])
+    y_compare[:5,:]
     
     # Menentukan probabilitas hasil prediksi
-    st.write(nvklasifikasi.predict_proba(X_test))
+    nvklasifikasi.predict_proba(X_test)
     akurasi = round(100 * accuracy_score(y_test, y_pred))
     st.write('Model accuracy score: {0:0.2f}'. format(akurasi))
     
