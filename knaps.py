@@ -155,5 +155,5 @@ with tab5:
     st.radio('TBG measured',['f','t'])
     st.text_input('TBG')
     st.multiselect('Referral source',['STMW', 'SVHC', 'SVHD', 'SVI', 'Other'])
-    
+    st.button('Prediksi')
     
