@@ -55,7 +55,18 @@ with tab3:
     
     st.dataframe(data)
     
-    X = X.drop(columns = "binaryClass")
+    data = data.drop(columns = "binaryClass")
 
     st.write("Menampilkan data yang sudah dinormalisasi dan dilakukan scaled features")
-    st.dataframe(X)
+    st.dataframe(data)
+    
+    percent_test_data = 0.3
+    X = data.iloc[:,1:29].values
+    Y = data.iloc[:,30].values
+    st.write("X")
+    st.write("Y")
+    X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size = percent_test_data, random_state=0)
+    st.write("X.shape")
+    st.write("X_train.shape")
+with tab4:
+    
