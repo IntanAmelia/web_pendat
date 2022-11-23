@@ -164,47 +164,14 @@ with tab5:
     st.table(features_df)  
 
     if st.button('Prediksi'):
-        st.write("Normalisasi Data")
-
-        from sklearn.preprocessing import LabelEncoder
-        enc=LabelEncoder()
-        for x in features_df.columns:
-          features_df[x]=enc.fit_transform(features_df[x])
-        features_df.info()
-
-        st.dataframe(features_df)
-
-        st.write("Scaled Features")
-        features_df['age']=(features_df['age']-features_df['age'].min())/(features_df['age'].max()-features_df['age'].min())
-        features_df['TT4']=(features_df['TT4']-features_df['TT4'].min())/(features_df['TT4'].max()-features_df['TT4'].min())
-        features_df['T4U']=(features_df['T4U']-features_df['T4U'].min())/(features_df['T4U'].max()-features_df['T4U'].min())
-        features_df['FTI']=(features_df['FTI']-features_df['FTI'].min())/(features_df['FTI'].max()-features_df['FTI'].min())
-
-        st.dataframe(features_df)
-
-        st.write("Menampilkan data yang sudah dinormalisasi dan dilakukan scaled features")
         st.dataframe(features_df)
         from sklearn.model_selection import train_test_split
         X_train,X_test,y_train,y_test= train_test_split(x,y,test_size=0.3,stratify=y)
-        st.write("X_train.shape")
-        st.write(X_train.shape)
-        st.write("X_test.shape")
-        st.write(X_test.shape)
-        st.write("y_train.shape")
-        st.write(y_train.shape)
-        st.write("y_test.shape")
-        st.write(y_test.shape)
-        
-        st.write("## Decision Tree")
         dt = DecisionTreeClassifier()
         dt.fit(X_train, y_train)
         # prediction
         dt.score(X_test, y_test)
         y_pred = dt.predict(X_test)
-
-        #Accuracy
-        akurasi = round(100 * accuracy_score(y_test,y_pred))
-        st.write('Model Accuracy Score: {0:0.2f}'.format(akurasi))
         
         # Custom value to predict
         result_test_knn = knn.predict(features_df)
