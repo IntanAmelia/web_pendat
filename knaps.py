@@ -168,22 +168,22 @@ with tab5:
 
         from sklearn.preprocessing import LabelEncoder
         enc=LabelEncoder()
-        for x in data.columns:
-          data[x]=enc.fit_transform(data[x])
-        data.info()
+        for x in features_df.columns:
+          features_df[x]=enc.fit_transform(features_df[x])
+        features_df.info()
 
-        st.dataframe(data)
+        st.dataframe(features_df)
 
         st.write("Scaled Features")
-        data['age']=(data['age']-data['age'].min())/(data['age'].max()-data['age'].min())
-        data['TT4']=(data['TT4']-data['TT4'].min())/(data['TT4'].max()-data['TT4'].min())
-        data['T4U']=(data['T4U']-data['T4U'].min())/(data['T4U'].max()-data['T4U'].min())
-        data['FTI']=(data['FTI']-data['FTI'].min())/(data['FTI'].max()-data['FTI'].min())
+        features_df['age']=(features_df['age']-features_df['age'].min())/(features_df['age'].max()-features_df['age'].min())
+        features_df['TT4']=(features_df['TT4']-features_df['TT4'].min())/(features_df['TT4'].max()-features_df['TT4'].min())
+        features_df['T4U']=(features_df['T4U']-features_df['T4U'].min())/(features_df['T4U'].max()-features_df['T4U'].min())
+        features_df['FTI']=(features_df['FTI']-features_df['FTI'].min())/(features_df['FTI'].max()-features_df['FTI'].min())
 
-        st.dataframe(data)
+        st.dataframe(features_df)
 
         st.write("Menampilkan data yang sudah dinormalisasi dan dilakukan scaled features")
-        st.dataframe(data)
+        st.dataframe(features_df)
         from sklearn.model_selection import train_test_split
         X_train,X_test,y_train,y_test= train_test_split(x,y,test_size=0.3,stratify=y)
         st.write("X_train.shape")
@@ -207,6 +207,6 @@ with tab5:
         st.write('Model Accuracy Score: {0:0.2f}'.format(akurasi))
         
         # Custom value to predict
-        result_test_knn = knn.predict([[0,	0,	0,	0,	0.5,	1,	1,	0.7,	0.2,	0]])
-        print(f"Customer : Budi Memiliki risk rating {result_test_knn[no_index]} Pada metode KNN model")
+        result_test_knn = knn.predict(features_df)
+        print(f"Customer : Memiliki Hasil Binary Class {result_test_knn[no_index]} Pada metode Decision Tree model")
         
