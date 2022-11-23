@@ -125,3 +125,40 @@ with tab4:
     akurasi = round(100 * accuracy_score(y_test,y_pred))
     st.write('Model Accuracy Score: {0:0.2f}'.format(akurasi))
     
+with tab5:
+    age = input("Masukkan Umur : ")
+    sex = input("Masukkan Jenis Kelamin : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    onthyroxine = input("Masukkan on thyroxine : ")
+    
+    
+    
+    
+    
