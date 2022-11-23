@@ -159,7 +159,7 @@ with tab5:
     
     features = {'age' : Age, 'sex' : Gender, 'on thyroxine' : On_thyroxine, 'query on thyroxine' : Query_on_thyroxine, 'on antithyroid medication' : On_antithyroid_medication, 'sick' : sick, 'pregnant' : pregnant, 'thyroid surgery' : Thyroid_surgery , 'I131 treatment' : I131_treatment, 'query hypothyroid' : Query_hypothyroid, 'query hyperthyroid' : Query_hyperthyroid, 'lithium' : Lithium, 'goitre' : Goitre, 'tumor' : Tumor, 'hypopituitary' : Hypopituitary, 'psych' : Psych, 'TSH Measured' : TSH_Measured, 'TSH' : TSH, 'T3 Measured' : T3_Measured, 'T3' : T3, 'TT4 Measured' : TT4_Measured, 'TT4' : TT4, 'T4U Measured' : T4U_Measured, 'T4U' : T4U, 'FTI Measured' : FTI_Measured, 'FTI' : FTI, 'TBG Measured' : TBG_Measured, 'TBG' : TBG, 'referral source' : Referral_source}        
 
-    features_df  = pd.dataframe([features])
+    features_df  = pd.DataFrame([features])
 
     st.table(features_df)  
 
