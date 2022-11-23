@@ -204,8 +204,9 @@ with tab5:
 
         #Accuracy
         akurasi = round(100 * accuracy_score(y_test,y_pred))
-        st.write('Model Accuracy Score: {0:0.2f}'.format# Custom value to predict
-
-        result_test_knn = knn.predict(features_df)
-        st.write(f"Customer : Memiliki hasil {result_test_knn[no_index]} Pada metode KNN model")(akurasi))
+        st.write('Model Accuracy Score: {0:0.2f}'.format(akurasi))
+        
+        # Custom value to predict
+        result_test_knn = knn.predict([[0,	0,	0,	0,	0.5,	1,	1,	0.7,	0.2,	0]])
+        print(f"Customer : Budi Memiliki risk rating {result_test_knn[no_index]} Pada metode KNN model")
         
