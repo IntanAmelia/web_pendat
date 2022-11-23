@@ -54,18 +54,15 @@ with tab3:
     data['FTI']=(data['FTI']-data['FTI'].min())/(data['FTI'].max()-data['FTI'].min())
     
     st.dataframe(data)
-    
-    data = data.drop(columns = "binaryClass")
-
-    st.write("Menampilkan data yang sudah dinormalisasi dan dilakukan scaled features")
-    st.dataframe(data)
        
     y=data['binaryClass']
     x=data.drop(['binaryClass'],axis=1)
+    st.write("Menampilkan data yang sudah dinormalisasi dan dilakukan scaled features")
+    st.dataframe(data)
     from sklearn.model_selection import train_test_split
     xtrain,xtest,ytrain,ytest= train_test_split(x,y,test_size=0.3,stratify=y)
     st.write("xtrain.shape")
     st.write("xtest.shape")
     st.write("ytrain.shape")
     st.write("ytest.shape")
-print(ytest.shape)
+
