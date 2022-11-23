@@ -45,3 +45,10 @@ with tab3:
     
     data.head()
     st.dataframe(data)
+
+    data['age']=(data['age']-data['age'].min())/(data['age'].max()-data['age'].min())
+    data['TT4']=(data['TT4']-data['TT4'].min())/(data['TT4'].max()-data['TT4'].min())
+    data['T4U']=(data['T4U']-data['T4U'].min())/(data['T4U'].max()-data['T4U'].min())
+    data['FTI']=(data['FTI']-data['FTI'].min())/(data['FTI'].max()-data['FTI'].min())
+    
+    st.dataframe(data)
