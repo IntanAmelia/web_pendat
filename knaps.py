@@ -68,5 +68,5 @@ with tab3:
     X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size = percent_test_data, random_state=0)
     st.write("X.shape")
     st.write("X_train.shape")
-with tab4:
+    
     
