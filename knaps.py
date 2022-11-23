@@ -127,7 +127,7 @@ with tab4:
     
 with tab5:
     Age = st.number_input('Masukkan Umur Anda : ', 0,1000)
-    Gender = st.radio('Pilih Gender',['Male','Female'])
+    Gender = st.radio('Pilih Gender',['M','F'])
     On_thyroxine = st.radio('On thyroxine',['f','t'])
     Query_on_thyroxine = st.radio('Query on thyroxine',['f','t'])
     On_antithyroid_medication = st.radio('On antithyroid medication',['f','t'])
