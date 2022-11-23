@@ -60,9 +60,42 @@ with tab3:
     st.write("Menampilkan data yang sudah dinormalisasi dan dilakukan scaled features")
     st.dataframe(data)
     from sklearn.model_selection import train_test_split
-    xtrain,xtest,ytrain,ytest= train_test_split(x,y,test_size=0.3,stratify=y)
-    st.write("xtrain.shape")
-    st.write("xtest.shape")
-    st.write("ytrain.shape")
-    st.write("ytest.shape")
+    X_train,X_test,y_train,y_test= train_test_split(x,y,test_size=0.3,stratify=y)
+    st.write("X_train.shape")
+    st.write("X_test.shape")
+    st.write("y_train.shape")
+    st.write("y_test.shape")
 
+with tab4:
+    # Feature Scaling to bring the variable in a single scale
+    from sklearn.preprocessing import StandardScaler
+    sc = StandardScaler()
+    X_train = sc.fit_transform(X_train)
+    X_test = sc.transform(X_test)
+    
+    GaussianNB(priors=None)
+    
+    # Fitting Naive Bayes Classification to the Training set with linear kernel
+    nvklasifikasi = GaussianNB()
+    nvklasifikasi = nvklasifikasi.fit(X_train, y_train)
+    
+    # Predicting the Test set results
+    y_pred = nvklasifikasi.predict(X_test)
+    y_pred
+    
+    #lets see the actual and predicted value side by side
+    y_compare = np.vstack((y_test,y_pred)).T
+    #actual value on the left side and predicted value on the right hand side
+    #printing the top 5 values
+    y_compare[:5,:]
+    
+    # Menentukan probabilitas hasil prediksi
+    nvklasifikasi.predict_proba(X_test)
+    akurasi = round(100 * accuracy_score(y_test, y_pred))
+    print('Model accuracy score: {0:0.2f}'. format(akurasi))
+    
+    # print the scores on training and test set
+    akurasi_training = round(100* nvklasifikasi.score(X_train, y_train))
+    akurasi_test = round(100 * nvklasifikasi.score(X_test, y_test) )
+    print('Training set score: {:.2f}'.format(akurasi_training))
+    print('Test set score: {:.2f}'.format(akurasi_test))
