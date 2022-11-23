@@ -161,7 +161,7 @@ with tab5:
 
     features_df  = pd.DataFrame([features])
 
-    st.table(features_df)  
+    st.table(features_df) 
 
     if st.button('Prediksi'):
         st.dataframe(features_df)
