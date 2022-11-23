@@ -105,7 +105,7 @@ with tab4:
     st.write('Training set score: {:.2f}'.format(akurasi_training))
     st.write('Test set score: {:.2f}'.format(akurasi_test))
     
-    st.write("KNN")
+    st.write("##KNN")
     K=10
     knn=KNeighborsClassifier(n_neighbors=K)
     knn.fit(X_train,y_train)
@@ -113,3 +113,15 @@ with tab4:
     
     skor_akurasi = round(100 * accuracy_score(y_test,y_pred))
     st.write("Model accuracy score : {0:0.2f}" . format(skor_akurasi))
+
+    st.write("##Decision Tree")
+    dt = DecisionTreeClassifier()
+    dt.fit(X_train, y_train)
+    # prediction
+    dt.score(X_test, y_test)
+    y_pred = dt.predict(X_test)
+    
+    #Accuracy
+    akurasi = round(100 * accuracy_score(y_test,y_pred))
+    st.write('Model Accuracy Score: {0:0.2f}'.format(akurasi))
+    
