@@ -159,10 +159,53 @@ with tab5:
     
     features = {'age' : Age, 'sex' : Gender, 'on thyroxine' : On_thyroxine, 'query on thyroxine' : Query_on_thyroxine, 'on antithyroid medication' : On_antithyroid_medication, 'sick' : sick, 'pregnant' : pregnant, 'thyroid surgery' : Thyroid_surgery , 'I131 treatment' : I131_treatment, 'query hypothyroid' : Query_hypothyroid, 'query hyperthyroid' : Query_hyperthyroid, 'lithium' : Lithium, 'goitre' : Goitre, 'tumor' : Tumor, 'hypopituitary' : Hypopituitary, 'psych' : Psych, 'TSH Measured' : TSH_Measured, 'TSH' : TSH, 'T3 Measured' : T3_Measured, 'T3' : T3, 'TT4 Measured' : TT4_Measured, 'TT4' : TT4, 'T4U Measured' : T4U_Measured, 'T4U' : T4U, 'FTI Measured' : FTI_Measured, 'FTI' : FTI, 'TBG Measured' : TBG_Measured, 'TBG' : TBG, 'referral source' : Referral_source}        
 
-    features_df  = pd.DataFrame([features])
+    features_df  = pd.dataframe([features])
 
     st.table(features_df)  
 
     if st.button('Prediksi'):
-        st.write(' Based on feature values')
-      
+        st.write("Normalisasi Data")
+
+        from sklearn.preprocessing import LabelEncoder
+        enc=LabelEncoder()
+        for x in data.columns:
+          data[x]=enc.fit_transform(data[x])
+        data.info()
+
+        st.dataframe(data)
+
+        st.write("Scaled Features")
+        data['age']=(data['age']-data['age'].min())/(data['age'].max()-data['age'].min())
+        data['TT4']=(data['TT4']-data['TT4'].min())/(data['TT4'].max()-data['TT4'].min())
+        data['T4U']=(data['T4U']-data['T4U'].min())/(data['T4U'].max()-data['T4U'].min())
+        data['FTI']=(data['FTI']-data['FTI'].min())/(data['FTI'].max()-data['FTI'].min())
+
+        st.dataframe(data)
+
+        st.write("Menampilkan data yang sudah dinormalisasi dan dilakukan scaled features")
+        st.dataframe(data)
+        from sklearn.model_selection import train_test_split
+        X_train,X_test,y_train,y_test= train_test_split(x,y,test_size=0.3,stratify=y)
+        st.write("X_train.shape")
+        st.write(X_train.shape)
+        st.write("X_test.shape")
+        st.write(X_test.shape)
+        st.write("y_train.shape")
+        st.write(y_train.shape)
+        st.write("y_test.shape")
+        st.write(y_test.shape)
+        
+        st.write("## Decision Tree")
+        dt = DecisionTreeClassifier()
+        dt.fit(X_train, y_train)
+        # prediction
+        dt.score(X_test, y_test)
+        y_pred = dt.predict(X_test)
+
+        #Accuracy
+        akurasi = round(100 * accuracy_score(y_test,y_pred))
+        st.write('Model Accuracy Score: {0:0.2f}'.format# Custom value to predict
+
+        result_test_knn = knn.predict(features_df)
+        st.write(f"Customer : Memiliki hasil {result_test_knn[no_index]} Pada metode KNN model")(akurasi))
+        
