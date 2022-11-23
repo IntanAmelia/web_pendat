@@ -19,14 +19,41 @@ st.write("""
 
 st.write("=========================================================================")
 
-tab1, tab2, tab3, tab4 = st.tabs(["Import Data", "Preprocessing", "Modelling", "Evalutions"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Description", "Import Data", "Preprocessing", "Modelling", "Evalutions"])
 
 with tab1:
+    st.write("Dataset yang digunakan pada penelitian ini yakni Thyroid Disease Datasets")
+    st.write("Thyroid Disease")
+    st.write("The most common thyroid disorder is hypothyroidism. Hypo- means deficient or under(active), so hypothyroidism is a condition in which the thyroid gland is underperforming or producing too little thyroid hormone. Recognizing the symptoms of hypothyroidism is extremely important.")
+    st.write("Data Set Information:
+From Garavan Institute
+Documentation: as given by Ross Quinlan
+6 databases from the Garavan Institute in Sydney, Australia
+Approximately the following for each database:
+
+2800 training (data) instances and 972 test instances
+Plenty of missing data
+29 or so attributes, either Boolean or continuously-valued
+
+2 additional databases, also from Ross Quinlan, are also here
+Hypothyroid.data and sick-euthyroid.data
+Quinlan believes that these databases have been corrupted
+Their format is highly similar to the other databases
+
+1 more database of 9172 instances that cover 20 classes, and a related domain theory
+Another thyroid database from Stefan Aeberhard
+3 classes, 215 instances, 5 attributes
+No missing values
+
+A Thyroid database suited for training ANNs
+3 classes
+3772 training instances, 3428 testing instances")
+with tab2:
     st.write("Import Data")
     data = pd.read_csv("https://raw.githubusercontent.com/Feb11F/dataset/main/credit_score.csv")
     st.dataframe(data)
 
-with tab2:
+with tab3:
     data.head()
 
     X = data.drop(columns=["risk_rating"])
