@@ -164,7 +164,7 @@ with tab5:
     st.table(features_df) 
 
     if st.button('Prediksi'):
-        features_dfd = np.reshape(features_df, (-1, 1))
+        features_dfd = np.reshape(features_df, (1, -1))
         st.dataframe(features_dfd)
         from sklearn.model_selection import train_test_split
         X_train,X_test,y_train,y_test= train_test_split(x,y,test_size=0.3,stratify=y)
