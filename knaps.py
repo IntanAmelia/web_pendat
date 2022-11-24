@@ -169,7 +169,7 @@ with tab5:
         
         from sklearn.preprocessing import LabelEncoder
         enc=LabelEncoder()
-        for x in data.columns:
+        for x in features_dfd.columns:
           features_dfd[x]=enc.fit_transform(features_dfd[x])
         features_dfd.info()
 
