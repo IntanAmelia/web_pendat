@@ -33,6 +33,7 @@ with tab2:
     st.write("Load Data")
     data = pd.read_csv("https://raw.githubusercontent.com/IntanAmelia/web_pendat/main/hypothyroid.csv")
     st.dataframe(data)
+    data
         
 with tab3:
     st.write("Normalisasi Data")
