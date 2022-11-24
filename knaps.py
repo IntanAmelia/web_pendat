@@ -30,10 +30,12 @@ with tab1:
     st.write("https://www.kaggle.com/datasets/yasserhessein/thyroid-disease-data-set")
     
 with tab2:
-    st.write("Load Data")
-    data = pd.read_csv("https://raw.githubusercontent.com/IntanAmelia/web_pendat/main/hypothyroid.csv")
-    st.dataframe(data)
-
+    uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+    for uploaded_file in uploaded_files:
+        bytes_data = uploaded_file.read()
+        st.write("filename:", uploaded_file.name)
+        st.write(bytes_data)
+        
 with tab3:
     st.write("Normalisasi Data")
     data.head()
