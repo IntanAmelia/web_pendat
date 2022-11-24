@@ -14,7 +14,7 @@ from sklearn.datasets import make_classification
 from sklearn.svm import SVC
 
 st.write(""" 
-# Cek data
+# Penambangan Data
 """)
 
 st.write("=========================================================================")
@@ -30,11 +30,9 @@ with tab1:
     st.write("https://www.kaggle.com/datasets/yasserhessein/thyroid-disease-data-set")
     
 with tab2:
-    uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
-    for uploaded_file in uploaded_files:
-        bytes_data = uploaded_file.read()
+    data = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+    for data in data:
         st.write("filename:", uploaded_file.name)
-        st.write(bytes_data)
         
 with tab3:
     st.write("Normalisasi Data")
