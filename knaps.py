@@ -164,7 +164,8 @@ with tab5:
     st.table(features_df) 
 
     if st.button('Prediksi'):
-        st.dataframe(features_df)
+        features_dfd = np.reshape(feaures_df, (-1, 1))
+        st.dataframe(features_dfd)
         from sklearn.model_selection import train_test_split
         X_train,X_test,y_train,y_test= train_test_split(x,y,test_size=0.3,stratify=y)
         dt = DecisionTreeClassifier()
@@ -174,6 +175,6 @@ with tab5:
         y_pred = dt.predict(X_test)
         
         # Custom value to predict
-        result_test_knn = knn.predict(features_df)
+        result_test_knn = knn.predict(features_dfd)
         print(f"Customer : Memiliki Hasil Binary Class {result_test_knn[no_index]} Pada metode Decision Tree model")
         
