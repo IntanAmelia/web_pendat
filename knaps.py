@@ -156,27 +156,27 @@ with tab5:
     input_data_as_numpy_array = np.array(features_df)
     input_data_reshape = input_data_as_numpy_array.reshape(1,-1)
 
-    st.table(features_df) 
+    st.table(input_data_reshape) 
 
     if st.button('Prediksi'):
-        st.dataframe(features_df)
+        st.dataframe(input_data_reshape)
         
         from sklearn.preprocessing import LabelEncoder
         enc=LabelEncoder()
-        for x in features_df.rows:
-          features_df[x]=enc.fit_transform(features_df[x])
-        features_df.info()
+        for x in input_data_reshape.rows:
+          input_data_reshape[x]=enc.fit_transform(input_data_reshape[x])
+        input_data_reshape.info()
 
-        features_df.head()
-        st.dataframe(features_df)
+        input_data_reshape.head()
+        st.dataframe(input_data_reshape)
 
-        features_df['age']=(features_df['age']-features_df['age'].min())/(features_df['age'].max()-features_df['age'].min())
-        features_df['TT4']=(features_df['TT4']-features_df['TT4'].min())/(features_df['TT4'].max()-features_df['TT4'].min())
-        features_df['T4U']=(features_df['T4U']-features_df['T4U'].min())/(features_df['T4U'].max()-features_df['T4U'].min())
-        features_df['FTI']=(features_df['FTI']-features_df['FTI'].min())/(features_df['FTI'].max()-features_df['FTI'].min())
+        input_data_reshape['age']=(input_data_reshape['age']-input_data_reshape['age'].min())/(input_data_reshape['age'].max()-input_data_reshape['age'].min())
+        input_data_reshape['TT4']=(input_data_reshape['TT4']-input_data_reshape['TT4'].min())/(input_data_reshape['TT4'].max()-input_data_reshape['TT4'].min())
+        input_data_reshape['T4U']=(input_data_reshape['T4U']-input_data_reshape['T4U'].min())/(input_data_reshape['T4U'].max()-input_data_reshape['T4U'].min())
+        input_data_reshape['FTI']=(input_data_reshape['FTI']-input_data_reshape['FTI'].min())/(input_data_reshape['FTI'].max()-input_data_reshape['FTI'].min())
 
 
-        st.dataframe(features_df)
+        st.dataframe(input_data_reshape)
 
         from sklearn.model_selection import train_test_split
         X_train,X_test,y_train,y_test= train_test_split(x,y,test_size=0.3,stratify=y)
