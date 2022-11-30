@@ -152,7 +152,7 @@ with tab5:
     referralsource = st.multiselect('Referral source',['SVHC', 'SVI', 'STMW', 'SVHD', 'Other'])
     
 
-    features_df  = {'age' : age, 'sex' : sex, 'onthyroxine' : onthyroxine, 'queryonthyroxine' : queryonthyroxine, 'onantithyroidmedication' : onantithyroidmedication, 'sick' : sick, 'pregnant' : pregnant, 'thyroidsurgery' : thyroidsurgery , 'I131treatment' : I131treatment, 'queryhypothyroid' : queryhypothyroid, 'queryhyperthyroid' : queryhyperthyroid, 'lithium' : lithium, 'goitre' : goitre, 'tumor' : tumor, 'hypopituitary' : hypopituitary, 'psych' : psych, 'TSHMeasured' : TSHMeasured, 'TSH' : TSH, 'T3Measured' : T3Measured, 'T3' : T3, 'TT4Measured' : TT4Measured, 'TT4' : TT4, 'T4UMeasured' : T4UMeasured, 'T4U' : T4U, 'FTIMeasured' : FTIMeasured, 'FTI' : FTI, 'TBGMeasured' : TBGMeasured, 'referralsource' : referralsource}
+    features_df  = ([age, sex, onthyroxine, queryonthyroxine, onantithyroidmedication, sick, pregnant, thyroidsurgery , I131treatment, queryhypothyroid, queryhyperthyroid, lithium, goitre, tumor, hypopituitary, psych, TSHMeasured, TSH, T3Measured, T3, TT4Measured, TT4, T4UMeasured, T4U, FTIMeasured, FTI, TBGMeasured, referralsource])
     input_data_as_numpy_array = np.array(features_df)
     input_data_reshape = input_data_as_numpy_array.reshape(1,-1)
 
@@ -191,6 +191,6 @@ with tab5:
         akurasi = round(100 * accuracy_score(y_test,y_pred))
         
         # Custom value to predict
-        result_test_decision_tree = decision_tree.predict(features_dfd)
-        print(f"Customer : Memiliki Hasil Binary Class {result_test_decision_tree[no_index]} Pada metode Decision Tree model")
+        result_test_decision_tree = dt.predict(features_dfd)
+        st.write(f"Customer : Memiliki Hasil Binary Class {result_test_decision_tree[no_index]} Pada metode Decision Tree model")
         
