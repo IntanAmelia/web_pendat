@@ -19,7 +19,7 @@ st.write("""
 
 st.write("=========================================================================")
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Description", "Import Data", "Preprocessing", "Modelling", "Evalutions"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Description", "Import Data", "Preprocessing", "Modelling", "Implementation"])
 
 with tab1:
     st.write("Dataset yang digunakan pada penelitian ini yakni Thyroid Disease Datasets")
