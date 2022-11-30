@@ -169,7 +169,7 @@ with tab5:
         features_dfd.head()
         st.dataframe(features_dfd)
 
-        features_dfd['age']=(features_dfd['age']-features_dfd['age'].min())/(features_dfd['age'].max()-features_dfd['age'].min())
+        features_dfd['Age']=(features_dfd['Age']-features_dfd['Age'].min())/(features_dfd['Age'].max()-features_dfd['Age'].min())
         features_dfd['TT4']=(features_dfd['TT4']-features_dfd['TT4'].min())/(features_dfd['TT4'].max()-features_dfd['TT4'].min())
         features_dfd['T4U']=(features_dfd['T4U']-features_dfd['T4U'].min())/(features_dfd['T4U'].max()-features_dfd['T4U'].min())
         features_dfd['FTI']=(features_dfd['FTI']-features_dfd['FTI'].min())/(features_dfd['FTI'].max()-features_dfd['FTI'].min())
