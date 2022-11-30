@@ -157,25 +157,24 @@ with tab5:
     st.table(features_df) 
 
     if st.button('Prediksi'):
-        features_dfd = np.reshape(features_df, (-1, 1))
-        st.dataframe(features_dfd)
+        st.dataframe(features_df)
         
         from sklearn.preprocessing import LabelEncoder
         enc=LabelEncoder()
-        for x in features_dfd.columns:
-          features_dfd[x]=enc.fit_transform(features_dfd[x])
-        features_dfd.info()
+        for x in features_df.columns:
+          features_df[x]=enc.fit_transform(features_df[x])
+        features_df.info()
 
-        features_dfd.head()
-        st.dataframe(features_dfd)
+        features_df.head()
+        st.dataframe(features_df)
 
-        features_dfd['age']=(features_dfd['age']-features_dfd['age'].min())/(features_dfd['age'].max()-features_dfd['age'].min())
-        features_dfd['TT4']=(features_dfd['TT4']-features_dfd['TT4'].min())/(features_dfd['TT4'].max()-features_dfd['TT4'].min())
-        features_dfd['T4U']=(features_dfd['T4U']-features_dfd['T4U'].min())/(features_dfd['T4U'].max()-features_dfd['T4U'].min())
-        features_dfd['FTI']=(features_dfd['FTI']-features_dfd['FTI'].min())/(features_dfd['FTI'].max()-features_dfd['FTI'].min())
+        features_df['age']=(features_df['age']-features_df['age'].min())/(features_df['age'].max()-features_df['age'].min())
+        features_df['TT4']=(features_df['TT4']-features_df['TT4'].min())/(features_df['TT4'].max()-features_df['TT4'].min())
+        features_df['T4U']=(features_df['T4U']-features_df['T4U'].min())/(features_df['T4U'].max()-features_df['T4U'].min())
+        features_df['FTI']=(features_df['FTI']-features_df['FTI'].min())/(features_df['FTI'].max()-features_df['FTI'].min())
 
 
-        st.dataframe(features_dfd)
+        st.dataframe(features_df)
 
         from sklearn.model_selection import train_test_split
         X_train,X_test,y_train,y_test= train_test_split(x,y,test_size=0.3,stratify=y)
