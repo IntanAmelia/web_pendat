@@ -152,7 +152,7 @@ with tab5:
     referralsource = st.multiselect('Referral source',['SVHC', 'SVI', 'STMW', 'SVHD', 'Other'])
     
 
-    features_df  = ('age' : age, 'sex' : sex, 'onthyroxine' : onthyroxine, 'queryonthyroxine' : queryonthyroxine, 'onantithyroidmedication' : onantithyroidmedication, 'sick' : sick, 'pregnant' : pregnant, 'thyroidsurgery' : thyroidsurgery , 'I131treatment' : I131treatment, 'queryhypothyroid' : queryhypothyroid, 'queryhyperthyroid' : queryhyperthyroid, 'lithium' : lithium, 'goitre' : goitre, 'tumor' : tumor, 'hypopituitary' : hypopituitary, 'psych' : psych, 'TSHMeasured' : TSHMeasured, 'TSH' : TSH, 'T3Measured' : T3Measured, 'T3' : T3, 'TT4Measured' : TT4Measured, 'TT4' : TT4, 'T4UMeasured' : T4UMeasured, 'T4U' : T4U, 'FTIMeasured' : FTIMeasured, 'FTI' : FTI, 'TBGMeasured' : TBGMeasured, 'referralsource' : referralsource)
+    features_df  = {'age' : age, 'sex' : sex, 'onthyroxine' : onthyroxine, 'queryonthyroxine' : queryonthyroxine, 'onantithyroidmedication' : onantithyroidmedication, 'sick' : sick, 'pregnant' : pregnant, 'thyroidsurgery' : thyroidsurgery , 'I131treatment' : I131treatment, 'queryhypothyroid' : queryhypothyroid, 'queryhyperthyroid' : queryhyperthyroid, 'lithium' : lithium, 'goitre' : goitre, 'tumor' : tumor, 'hypopituitary' : hypopituitary, 'psych' : psych, 'TSHMeasured' : TSHMeasured, 'TSH' : TSH, 'T3Measured' : T3Measured, 'T3' : T3, 'TT4Measured' : TT4Measured, 'TT4' : TT4, 'T4UMeasured' : T4UMeasured, 'T4U' : T4U, 'FTIMeasured' : FTIMeasured, 'FTI' : FTI, 'TBGMeasured' : TBGMeasured, 'referralsource' : referralsource}
     input_data_as_numpy_array = np.array(features_df)
     input_data_reshape = input_data_as_numpy_array.reshape(1,-1)
 
