@@ -152,7 +152,9 @@ with tab5:
     referralsource = st.multiselect('Referral source',['SVHC', 'SVI', 'STMW', 'SVHD', 'Other'])
     
 
-    features_df  = pd.DataFrame([age, sex, onthyroxine, queryonthyroxine, onantithyroidmedication, sick, pregnant, thyroidsurgery , I131treatment, queryhypothyroid, queryhyperthyroid, lithium, goitre, tumor, hypopituitary, psych, TSHMeasured, TSH, T3Measured, T3, TT4Measured, TT4, T4UMeasured, T4U, FTIMeasured, FTI, TBGMeasured, referralsource])
+    features_df  = (age, sex, onthyroxine, queryonthyroxine, onantithyroidmedication, sick, pregnant, thyroidsurgery , I131treatment, queryhypothyroid, queryhyperthyroid, lithium, goitre, tumor, hypopituitary, psych, TSHMeasured, TSH, T3Measured, T3, TT4Measured, TT4, T4UMeasured, T4U, FTIMeasured, FTI, TBGMeasured, referralsource)
+    input_data_as_numpy_array = np.array(features_df)
+    input_data_reshape = input_data_as_numpy_array.reshape(1,-1)
 
     st.table(features_df) 
 
