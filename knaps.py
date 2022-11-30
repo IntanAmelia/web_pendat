@@ -163,7 +163,7 @@ with tab5:
         
         from sklearn.preprocessing import LabelEncoder
         enc=LabelEncoder()
-        for x in input_data_reshape.rows:
+        for x in input_data_reshape.columns:
           input_data_reshape[x]=enc.fit_transform(input_data_reshape[x])
         input_data_reshape.info()
 
