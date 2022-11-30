@@ -148,14 +148,11 @@ with tab5:
     T4U = st.number_input('T4U : ', -1,1000)
     FTI_Measured = st.radio('FTI measured',['f','t'])
     FTI = st.number_input('FTI : ', -1,1000)
-    TBG_Measured = st.radio('TBG measured',['f','t'])
-    TBG = st.text_input('TBG')
+    TBG_Measured = st.radio('TBG measured',['f'])
     Referral_source = st.multiselect('Referral source',['SVHC', 'SVI', 'STMW', 'SVHD', 'Other'])
     
-    
-    features = {'age' : Age, 'sex' : Gender, 'on thyroxine' : On_thyroxine, 'query on thyroxine' : Query_on_thyroxine, 'on antithyroid medication' : On_antithyroid_medication, 'sick' : sick, 'pregnant' : pregnant, 'thyroid surgery' : Thyroid_surgery , 'I131 treatment' : I131_treatment, 'query hypothyroid' : Query_hypothyroid, 'query hyperthyroid' : Query_hyperthyroid, 'lithium' : Lithium, 'goitre' : Goitre, 'tumor' : Tumor, 'hypopituitary' : Hypopituitary, 'psych' : Psych, 'TSH Measured' : TSH_Measured, 'TSH' : TSH, 'T3 Measured' : T3_Measured, 'T3' : T3, 'TT4 Measured' : TT4_Measured, 'TT4' : TT4, 'T4U Measured' : T4U_Measured, 'T4U' : T4U, 'FTI Measured' : FTI_Measured, 'FTI' : FTI, 'TBG Measured' : TBG_Measured, 'TBG' : TBG, 'referral source' : Referral_source}        
 
-    features_df  = pd.DataFrame([features])
+    features_df  = pd.DataFrame([Age, Sex, Onthyroxine, Queryonthyroxine, Onantithyroidmedication, Sick, Pregnant, Thyroidsurgery , I131treatment, Queryhypothyroid, Queryhyperthyroid, Lithium, Goitre, Tumor, Hypopituitary, Psych, TSHMeasured, TSH, T3Measured, T3, TT4Measured, TT4, T4UMeasured, T4U, FTIMeasured, FTI, TBGMeasured, Referralsource])
 
     st.table(features_df) 
 
