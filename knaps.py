@@ -32,12 +32,12 @@ with tab1:
 with tab2:
     st.write("Load Data :")
     data_file = st.file_uploader("Upload CSV",type=['csv'])
-		if st.button("Process"):
-			if data_file is not None:
-				file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
-				st.write(file_details)
-				df = pd.read_csv(data_file)
-				st.dataframe(df)
+	if st.button("Process"):
+		if data_file is not None:
+			file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
+			st.write(file_details)
+			df = pd.read_csv(data_file)
+			st.dataframe(df)
     st.write("Load Data")
     data = pd.read_csv("https://raw.githubusercontent.com/IntanAmelia/web_pendat/main/hypothyroid.csv")
     st.dataframe(data)
