@@ -157,7 +157,7 @@ with tab5:
     st.table(features_df) 
 
     if st.button('Prediksi'):
-        features_dfd = np.reshape(features_df, (1, -1))
+        features_dfd = np.reshape(features_df, (-1, 1))
         st.dataframe(features_dfd)
         
         from sklearn.preprocessing import LabelEncoder
