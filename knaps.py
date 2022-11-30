@@ -115,6 +115,12 @@ with tab4:
     
     skor_akurasi = round(100 * accuracy_score(y_test,y_pred))
     st.write("Model accuracy score : {0:0.2f}" . format(skor_akurasi))
+    
+    # print the scores on training and test set
+    akurasi_training = round(100* nvklasifikasi.score(X_train, y_train))
+    akurasi_test = round(100 * nvklasifikasi.score(X_test, y_test) )
+    st.write('Training set score: {:.2f}'.format(akurasi_training))
+    st.write('Test set score: {:.2f}'.format(akurasi_test))
 
     st.write("## Decision Tree")
     dt = DecisionTreeClassifier()
@@ -126,6 +132,12 @@ with tab4:
     #Accuracy
     akurasi = round(100 * accuracy_score(y_test,y_pred))
     st.write('Model Accuracy Score: {0:0.2f}'.format(akurasi))
+    
+    # print the scores on training and test set
+    akurasi_training = round(100* nvklasifikasi.score(X_train, y_train))
+    akurasi_test = round(100 * nvklasifikasi.score(X_test, y_test) )
+    st.write('Training set score: {:.2f}'.format(akurasi_training))
+    st.write('Test set score: {:.2f}'.format(akurasi_test))
     
 with tab5:
     Age = st.number_input('Masukkan Umur Anda : ', 0,1000)
