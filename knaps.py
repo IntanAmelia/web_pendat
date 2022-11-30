@@ -90,13 +90,10 @@ with tab4:
     
     # Predicting the Test set results
     y_pred = nvklasifikasi.predict(X_test)
-    y_pred
     
     #lets see the actual and predicted value side by side
     y_compare = np.vstack((y_test,y_pred)).T
     #actual value on the left side and predicted value on the right hand side
-    #printing the top 5 values
-    y_compare[:5,:]
     
     # Menentukan probabilitas hasil prediksi
     nvklasifikasi.predict_proba(X_test)
