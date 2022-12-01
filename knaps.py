@@ -122,7 +122,7 @@ with tab4:
     st.write('Model Accuracy Score: {0:0.2f}'.format(akurasi))
     
 with tab5:
-     age = st.text_input('Masukkan Umur Anda : ')
+    age = st.text_input('Masukkan Umur Anda : ')
     sex = st.text_input('Gender')
     onthyroxine = st.text_input('On thyroxine')
     queryonthyroxine = st.text_input('Query on thyroxine')
